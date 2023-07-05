@@ -19,55 +19,63 @@ onMounted(() => {
 </script>
 
 <template>
-  <nav class="d-flex align-items-center justify-content-around w-100">
-    <img src="../assets/sesatech.png" alt="Sesatech" />
-
-    <ul class="d-flex flex-row gap-3 mb-0 list-unstyled">
-      <li>
-        <RouterLink to="/" class="fw-bold fs-4 text-white text-decoration-none"
-          >Home</RouterLink
-        >
-      </li>
-      <li v-if="logged">
-        <RouterLink
-          to="/dashboard"
-          class="fw-bold fs-4 text-white text-decoration-none"
-          >Dashboard</RouterLink
-        >
-      </li>
-      <li>
-        <RouterLink
-          to="/about"
-          class="fw-bold fs-4 text-white text-decoration-none"
-          >Sobre</RouterLink
-        >
-      </li>
-      <li v-if="!logged">
-        <RouterLink
-          to="/login"
-          class="fw-bold fs-4 text-white text-decoration-none"
-          >Login</RouterLink
-        >
-      </li>
-      <li
-        v-if="logged"
-        @click="logout"
-        class="fw-bold fs-4 text-white text-decoration-none nav-item"
-        style="cursor: pointer"
+  <nav
+    class="navbar navbar-expand-md p-4 w-100"
+    style="background-color: #4b2c85"
+  >
+    <div class="container-fluid gap-3">
+      <img src="../assets/sesatech.png" alt="Sesatech" style="width: 180px" />
+      <div
+        class="navbar-toggler p-1 border-white"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
       >
-        Logout
-      </li>
-    </ul>
+        <img src="../assets/menu.svg" alt="Menu" style="width: 40px" />
+      </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-3">
+          <li>
+            <RouterLink
+              to="/"
+              class="fw-bold fs-4 text-white text-decoration-none nav-item"
+              >Home</RouterLink
+            >
+          </li>
+          <li v-if="logged">
+            <RouterLink
+              to="/dashboard"
+              class="fw-bold fs-4 text-white text-decoration-none nav-item"
+              >Dashboard</RouterLink
+            >
+          </li>
+          <li>
+            <RouterLink
+              to="/about"
+              class="fw-bold fs-4 text-white text-decoration-none nav-item"
+              >Sobre</RouterLink
+            >
+          </li>
+          <li v-if="!logged">
+            <RouterLink
+              to="/login"
+              class="fw-bold fs-4 text-white text-decoration-none nav-item"
+              >Login</RouterLink
+            >
+          </li>
+          <li
+            v-if="logged"
+            @click="logout"
+            class="fw-bold fs-4 text-white text-decoration-none nav-item"
+            style="cursor: pointer"
+          >
+            Logout
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
 </template>
-
-<style scoped>
-nav {
-  height: 90px;
-  background-color: #4b2c85;
-}
-
-img {
-  width: 180px;
-}
-</style>

@@ -54,7 +54,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="d-flex flex-column align-items-center my-5">
+  <div
+    class="d-flex flex-column align-items-center mx-3 my-5 p-5 border rounded shadow"
+  >
     <h2 class="fw-bold my-3">Faça o login</h2>
     <form
       class="d-flex flex-column gap-3 needs-validation"
@@ -76,7 +78,7 @@ onMounted(() => {
       <label for="password" class="form-label"
         >Senha:
         <input
-          type="text"
+          type="password"
           id="password"
           class="form-control"
           required
@@ -89,7 +91,7 @@ onMounted(() => {
   </div>
   <div
     v-if="showError"
-    class="d-flex flex-row gap-2 border border-danger rounded p-3"
+    class="d-flex flex-row gap-2 border border-danger rounded p-3 mx-3 mb-5"
   >
     <div class="text-danger fw-bold">
       Usuário não encontrado. Tente novamente.

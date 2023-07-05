@@ -2,15 +2,27 @@
 import { defineProps } from "vue";
 
 const props = defineProps({
-  pagination: String,
-  prevPage: Function,
-  fetchData: Function,
-  nextPage: Function,
+  pagination: {
+    type: String,
+    required: true,
+  },
+  prevPage: {
+    type: Function,
+    required: true,
+  },
+  fetchData: {
+    type: Function,
+    required: true,
+  },
+  nextPage: {
+    type: Function,
+    required: true,
+  },
 });
 </script>
 
 <template>
-  <nav aria-label="Page navigation example">
+  <nav class="m-3">
     <ul class="pagination justify-content-center user-select-none">
       <li
         class="page-item"

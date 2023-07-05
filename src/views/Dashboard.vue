@@ -3,6 +3,7 @@ import axios from "axios";
 import { onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
 import Pagination from "../components/Pagination.vue";
+import ServicesTable from "../components/ServicesTable.vue";
 
 const router = useRouter();
 
@@ -53,7 +54,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <h1>Dashboard</h1>
+  <h1 class="fw-bold my-3">Dashboard</h1>
 
   <Pagination
     :pagination="pagination"
@@ -62,9 +63,7 @@ onMounted(() => {
     :nextPage="nextPage"
   />
 
-  <p v-if="data" v-for="item in data">
-    {{ item.name }} {{ item.statusService }}
-  </p>
+  <ServicesTable :items="data" v-if="data" />
 
   <Pagination
     :pagination="pagination"
