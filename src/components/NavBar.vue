@@ -20,11 +20,11 @@ onMounted(() => {
 
 <template>
   <nav
-    class="navbar navbar-expand-md p-4 w-100"
+    class="navbar navbar-expand-md sticky-top p-4 w-100"
     style="background-color: #4b2c85"
   >
     <div class="container-fluid gap-3">
-      <img src="../assets/sesatech.png" alt="Sesatech" style="width: 180px" />
+      <img src="../assets/sesatech.png" alt="SesaTech" style="width: 180px" />
       <div
         class="navbar-toggler p-1 border-white"
         type="button"

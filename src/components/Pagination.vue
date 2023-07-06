@@ -1,6 +1,4 @@
 <script setup>
-import { defineProps } from "vue";
-
 const props = defineProps({
   pagination: {
     type: String,
@@ -29,7 +27,7 @@ const props = defineProps({
         :class="pagination === '1' || pagination === '' ? 'disabled' : ''"
         style="cursor: pointer"
       >
-        <a class="page-link" @click="prevPage">Previous</a>
+        <a class="page-link" @click="prevPage">Anterior</a>
       </li>
       <li class="page-item">
         <a
@@ -63,7 +61,7 @@ const props = defineProps({
         :class="pagination === '3' || pagination === '' ? 'disabled' : ''"
         style="cursor: pointer"
       >
-        <a class="page-link" href="#" @click="nextPage">Next</a>
+        <a class="page-link" href="#" @click="nextPage">Próxima</a>
       </li>
     </ul>
   </nav>

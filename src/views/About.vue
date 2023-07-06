@@ -1,6 +1,6 @@
 <template>
   <h1 class="fw-bold m-3">Sobre mim</h1>
-  <div class="mx-5 p-5 border rounded shadow" style="text-align: justify">
+  <div class="mx-5 mb-5 p-5 border rounded shadow" style="text-align: justify">
     <p>
       Meu nome é <span class="fw-bold">Cláudio Ferreira de Assis</span>, tenho
       38 anos e sou esposo da <span class="fw-bold">Ana Paula</span>, com quem
@@ -37,7 +37,7 @@
     <p>
       Desde já agradeço por poder participar desse processo seletivo. Tenho
       certeza que eu posso render muito como programador na
-      <span class="fw-bold">Sesatech</span>. Espero em breve fazer parte do time
+      <span class="fw-bold">SesaTech</span>. Espero em breve fazer parte do time
       e confio no meu potencial para crescer junto com a empresa.
     </p>
   </div>
