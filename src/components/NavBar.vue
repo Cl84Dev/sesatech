@@ -1,19 +1,25 @@
 <script setup>
 import { RouterLink, useRouter } from "vue-router";
-import { logged } from "../store";
 import { onMounted } from "vue";
+import { useLoggedStore } from "../stores/LoginStore";
+import { storeToRefs } from "pinia";
 
 const router = useRouter();
 
+const store = useLoggedStore();
+
+const { logged } = storeToRefs(store);
+const { updateLogged } = store;
+
 const logout = () => {
-  logged.value = false;
+  updateLogged(false);
   localStorage.clear();
   router.push("/");
 };
 
 onMounted(() => {
   if (localStorage.getItem("accessToken")) {
-    logged.value = true;
+    updateLogged(true);
   }
 });
 </script>

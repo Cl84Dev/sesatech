@@ -1,8 +1,12 @@
 <script setup>
 import axios from "axios";
 import { ref, onMounted } from "vue";
-import { logged } from "../../src/store";
 import { useRouter } from "vue-router";
+import { useLoggedStore } from "../stores/LoginStore";
+
+const store = useLoggedStore();
+
+const { updateLogged } = store;
 
 const form = ref(null);
 
@@ -29,7 +33,7 @@ const submitForm = (event) => {
       .post("http://localhost:8000/login", requestBody)
       .then((res) => {
         localStorage.setItem("accessToken", res.data.accessToken);
-        logged.value = true;
+        updateLogged(true);
         router.push("/dashboard");
       })
       .catch((err) => {
@@ -47,7 +51,7 @@ const submitForm = (event) => {
 
 onMounted(() => {
   if (localStorage.getItem("accessToken")) {
-    logged.value = true;
+    updateLogged(true);
     router.push("/dashboard");
   }
 });
